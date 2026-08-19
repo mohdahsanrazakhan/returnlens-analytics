@@ -1,0 +1,8 @@
+{
+  "changed_mind": 0.30,
+  "wrong_size": 0.22,
+  "not_as_described": 0.18,
+  "damaged": 0.12,
+  "defective": 0.10,
+  "wrong_item": 0.08
+}

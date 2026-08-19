@@ -1,0 +1,16 @@
+{
+  "KSA": [
+    { "city": "Riyadh", "share": 0.30 },
+    { "city": "Jeddah", "share": 0.15 },
+    { "city": "Dammam", "share": 0.05 },
+    { "city": "Makkah", "share": 0.03 },
+    { "city": "Other", "share": 0.02 }
+  ],
+  "UAE": [
+    { "city": "Dubai", "share": 0.25 },
+    { "city": "Abu Dhabi", "share": 0.10 },
+    { "city": "Sharjah", "share": 0.05 },
+    { "city": "Ajman", "share": 0.03 },
+    { "city": "RAK", "share": 0.02 }
+  ]
+}
