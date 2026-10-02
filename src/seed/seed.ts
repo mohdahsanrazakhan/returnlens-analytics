@@ -46,7 +46,7 @@ export async function runSeed() {
   log("Dropped existing collections");
 
   // ---- 1. Demo user ----
-  const passwordHash = await bcrypt.hash("ReturnLens@2026!", 12);
+  const passwordHash = await bcrypt.hash("ReturnLens@2026", 12);
   await UserModel.create({
     name: "Demo User",
     email: "demo@returnlens.com",

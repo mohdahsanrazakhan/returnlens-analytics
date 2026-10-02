@@ -34,9 +34,14 @@ export function LoginCard() {
 
       <div className="rounded-2xl border border-border bg-surface p-6 shadow-2xl sm:p-8">
         <LoginForm />
-        <div className="mt-6 rounded-lg bg-background p-3 text-center text-xs text-text-secondary">
-          {t("login.demoCredentials")} <span className="font-medium text-primary">demo@returnlens.com</span> /{" "}
-          <span className="font-medium text-primary">ReturnLens@2026!</span>
+        <div className="mt-6 rounded-lg border border-border bg-background p-4 text-sm">
+          <p className="font-semibold text-primary">{t("login.demoCredentials")}</p>
+          <p className="mt-2 text-text-secondary">
+            {t("login.email")}: <span className="text-primary">demo@returnlens.com</span>
+          </p>
+          <p className="text-text-secondary">
+            {t("login.password")}: <span className="text-primary">ReturnLens@2026</span>
+          </p>
         </div>
       </div>
     </div>

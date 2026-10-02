@@ -39,7 +39,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "lang.switch": "العربية",
     "lang.label": "Language",
 
-    "login.demoCredentials": "Demo credentials:",
+    "login.demoCredentials": "Demo credentials",
     "login.email": "Email",
     "login.password": "Password",
     "login.signIn": "Sign in",
@@ -393,7 +393,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "lang.switch": "English",
     "lang.label": "اللغة",
 
-    "login.demoCredentials": "بيانات الدخول التجريبية:",
+    "login.demoCredentials": "بيانات الدخول التجريبية",
     "login.email": "البريد الإلكتروني",
     "login.password": "كلمة المرور",
     "login.signIn": "تسجيل الدخول",

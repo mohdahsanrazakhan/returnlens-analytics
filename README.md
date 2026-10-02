@@ -31,7 +31,7 @@ with AI-powered recommendations.
 4. `npm run seed` (runs `scripts/seed.ts` — generates 65 products, 800 customers, 8,000 orders, 20 recommendations)
 5. `npm run dev`
 6. Open http://localhost:3000
-7. Login: `demo@returnlens.com` / `ReturnLens@2026!`
+7. Login: `demo@returnlens.com` / `ReturnLens@2026`
 
 ## Seed Data Notes
 The distributions (category return rates, city-level COD rejection rates, return
