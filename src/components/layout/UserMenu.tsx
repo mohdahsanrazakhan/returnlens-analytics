@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
 import { Pencil, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/LanguageProvider";
+import { LogoutConfirmDialog } from "@/components/shared/LogoutConfirmDialog";
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/).filter(Boolean);
@@ -17,6 +17,7 @@ function getInitials(name: string) {
 export function UserMenu({ userName, company }: { userName?: string; company?: string }) {
   const { t } = useLanguage();
   const [open, setOpen] = React.useState(false);
+  const [logoutOpen, setLogoutOpen] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
   const name = userName ?? "Demo User";
 
@@ -77,7 +78,10 @@ export function UserMenu({ userName, company }: { userName?: string; company?: s
             <button
               type="button"
               role="menuitem"
-              onClick={() => signOut({ callbackUrl: "/login" })}
+              onClick={() => {
+                setOpen(false);
+                setLogoutOpen(true);
+              }}
               className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm font-medium text-danger transition-colors hover:bg-danger/10"
             >
               <LogOut className="h-4 w-4" />
@@ -86,6 +90,8 @@ export function UserMenu({ userName, company }: { userName?: string; company?: s
           </div>
         </div>
       )}
+
+      <LogoutConfirmDialog open={logoutOpen} onClose={() => setLogoutOpen(false)} />
     </div>
   );
 }

@@ -4,7 +4,6 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
 import {
   LayoutDashboard,
   RotateCcw,
@@ -20,6 +19,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/LanguageProvider";
+import { LogoutConfirmDialog } from "@/components/shared/LogoutConfirmDialog";
 
 const NAV_ITEMS = [
   { href: "/dashboard", key: "nav.overview", icon: LayoutDashboard },
@@ -35,6 +35,7 @@ export function Sidebar({ className, onClose }: { className?: string; onClose?: 
   const pathname = usePathname();
   const { t } = useLanguage();
   const [collapsed, setCollapsed] = React.useState(false);
+  const [logoutOpen, setLogoutOpen] = React.useState(false);
   const isMobile = Boolean(onClose);
 
   return (
@@ -117,7 +118,7 @@ export function Sidebar({ className, onClose }: { className?: string; onClose?: 
       <div className="flex flex-col gap-1 border-t border-border px-3 py-3">
         <button
           type="button"
-          onClick={() => signOut({ callbackUrl: "/login" })}
+          onClick={() => setLogoutOpen(true)}
           title={collapsed ? t("header.logout") : undefined}
           aria-label={t("header.logout")}
           className={cn(
@@ -129,6 +130,8 @@ export function Sidebar({ className, onClose }: { className?: string; onClose?: 
           {!collapsed && t("header.logout")}
         </button>
       </div>
+
+      <LogoutConfirmDialog open={logoutOpen} onClose={() => setLogoutOpen(false)} />
     </aside>
   );
 }
